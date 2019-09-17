@@ -3,9 +3,11 @@
   "scripts": {
     "build": "gulp build",
     "rebuild": "gulp rebuild",
-    "watch": " gulp watch"
+    "watch": "gulp watch",
+    "cypress": "cypress open"
   },
   "devDependencies": {
+    "cypress": "^3.4.1",
     "es6-promise": "4.2.8",
     "file-system": "2.2.2",
     "glob": "7.1.4",

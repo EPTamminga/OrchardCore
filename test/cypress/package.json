@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "cypress": "^3.4.1",
+    "faker": "^4.1.0",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "node -e \"require('./test').build('../../src/OrchardCore.Cms.Web')\"",
+    "clean": "node -e \"require('./test').clean('../../src/OrchardCore.Cms.Web')\"",
+    "host": "node -e \"require('./test').host('../../src/OrchardCore.Cms.Web', 'OrchardCore.Cms.Web.dll')\"",
+    "test": "node -e \"require('./test').e2e('../../src/OrchardCore.Cms.Web', 'OrchardCore.Cms.Web.dll')\"",
+    "test:clean": "node -e \"require('./test').e2e('../../src/OrchardCore.Cms.Web', 'OrchardCore.Cms.Web.dll', true)\"",
+    "test:clean-build": "node -e \"require('./test').e2e('../../src/OrchardCore.Cms.Web', 'OrchardCore.Cms.Web.dll', true, true)\"",
+    "cypress": "cypress run --config video=false",
+    "cypress:open": "cypress open"
+  }
+}

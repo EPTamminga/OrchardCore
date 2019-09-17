@@ -26,13 +26,16 @@ environment:
         secure: 8Fp2ETunhU6PvhlotuQXTZ7WkG1FikJ3BM7YLAZyfmbpy00knABu5yL7MhJ9uNcl
     NUGET_API_KEY:
         secure: bR0JuO8NuLOxL18tQ7ZtQXOHNHjqCJXlkUOzEyNQniptTszwYcwufYhKTyoybqei
+  nodejs_version: "12"
 
-stack: node 9, docker
+stack: node 12, docker
 
 # build cache to preserve files/folders between builds
 cache:
   - node_modules -> **\package.json # local npm modules
   - '%LocalAppData%\NuGet\v3-cache -> **\*.props' # NuGet v3
+  - '%AppData%\npm'
+  - '%USERPROFILE%\AppData\Local\Cypress\Cache'
 
 # Install scripts. (runs after repo cloning)
 install:
@@ -55,9 +58,9 @@ init:
 
 test_script:
   - dotnet test -c Release --no-build .\test\OrchardCore.Tests\OrchardCore.Tests.csproj
-  - cd .\test\Functional
-  - test-setup.cmd
-  - test-run.cmd
+  - cd .\test\cypress
+  - npm install
+  - npm run test
 
 clone_depth: 1
 test: on
