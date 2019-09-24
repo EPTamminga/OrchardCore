@@ -26,7 +26,7 @@ describe('Blog Tests', function() {
 
         cy.visitTenantPage(blog, `blog/${blogName}`);
 
-        cy.contains('h1').should('contain.text', blogName);
+        cy.get('h1').should('contain.text', blogName);
         cy.get(':nth-child(3) > .row > .col-lg-8 > p').should('contain.text', text);
     });
 });

@@ -6,7 +6,7 @@ module.exports = {
         let data = {};
         for (let i = 0; i < count; i++) {
             var name = faker.random.uuid();
-            var text = faker.lorem.sentence();
+            var text = faker.lorem.paragraphs();
 
             data[name] = {
                 name,

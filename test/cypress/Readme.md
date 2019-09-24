@@ -20,3 +20,12 @@ npm run cypress:open // Opens the cypress ui
 Then, click on run all specs to see it in action.
 
 Tests will fail if not run from a clean install.
+
+
+## Test data generator
+
+To generate test data, run the following in a console
+
+```
+node -e 'require(\"./test_generator\").generateBlogData()'
+```
